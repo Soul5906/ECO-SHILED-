@@ -1,0 +1,24 @@
+services:
+  ecoshield:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ecoshield:latest
+    container_name: ecoshield_app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=sqlite:////data/ecoshield.db
+      - CORS_ORIGINS=*
+      - FRONTEND_DIST_DIR=/app/frontend/dist
+    volumes:
+      - ecoshield_data:/data
+
+volumes:
+  ecoshield_data:
+    name: ecoshield_sqlite_data

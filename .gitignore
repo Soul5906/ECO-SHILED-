@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Node / Frontend dependencies
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Python cache & artifacts
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases & logs
+backend/ecoshield.db
+*.db-journal
+*.log
+
+# Environment variables & secrets
+.env
+backend/.env
+frontend/.env.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
